@@ -25,15 +25,16 @@ export default class cardBack {
   public render() {
     if (this.root) {
       this.root.append(this.img);
+      this.img.classList.remove("card-back__hidden");
     }
   }
 
   public hide() {
-    this.img.classList.add("card-back__hidden")
+    this.img.classList.add("card-back__hidden");
   }
 
   public show() {
-    this.img.classList.remove("card-back__hidden")
+    this.img.classList.remove("card-back__hidden");
   }
 
   private click() {

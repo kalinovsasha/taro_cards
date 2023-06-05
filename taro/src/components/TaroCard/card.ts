@@ -4,6 +4,7 @@ import './card.scss';
 export default class Card {
   private element: HTMLElement | null = null
   private rootElement: HTMLElement | null = null
+  
   constructor(rootElement: HTMLElement, styles: string[] = [], card: TaroCard) {
     this.rootElement = rootElement;
 

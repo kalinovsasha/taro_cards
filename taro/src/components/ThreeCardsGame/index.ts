@@ -16,10 +16,17 @@ export default class ThreeCardGame {
   }
 
   public start() {
+    this.results = [];
+    this.displayCards.forEach((el) => el.remove());
+
     if (this.backCards.length == 0) {
       for (let i = 0; i < 78; i++) {
         this.backCards[i] = new cardBack(this.rootElement, `${i}`);
         this.backCards[i].img.onclick = () => this.selectCard(i);
+      }
+    } else {
+      for (let i = 0; i < 78; i++) {
+        this.backCards[i].render();
       }
     }
   }
@@ -30,12 +37,13 @@ export default class ThreeCardGame {
       this.results.push(i)
     } else {
       this.results.push(i)
-      for (let i = 0; i < 3; i++) {
-        this.displayCards[this.results[i]] = new Card(this.rootElement!, [], tarocards[i])
-      }
       for (let i = 0; i < 78; i++) {
         this.backCards[i].remove()
       }
+      for (let i = 0; i < 3; i++) {
+        this.displayCards[this.results[i]] = new Card(this.rootElement!, [], tarocards[i]);
+      }
+      
       this.results = [];
     }
   }
