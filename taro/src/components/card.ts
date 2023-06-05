@@ -2,8 +2,8 @@ import { TaroCard } from '../model/cards';
 import './card.scss';
 
 export default class Card {
-  element: HTMLElement | null = null
-  rootElement: HTMLElement | null = null
+  private element: HTMLElement | null = null
+  private rootElement: HTMLElement | null = null
   constructor(rootElement: HTMLElement, styles: string[] = [], card: TaroCard) {
     this.rootElement = rootElement;
 
