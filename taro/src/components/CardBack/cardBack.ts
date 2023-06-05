@@ -3,7 +3,7 @@ import img from '../../assets/img/back.jpg'
 
 export default class cardBack {
   private root: HTMLElement | null = null
-  private img = document.createElement("img");
+  public img = document.createElement("img");
   private callback: () => void
   constructor(root: HTMLElement | null = null, dataAtribute: string = "", callback: () => void = () => { },  classlist: string[] = []) {
     this.root = root;
@@ -14,11 +14,12 @@ export default class cardBack {
     this.img.classList.add(...classlist);
     this.img.classList.add('card-back');
     this.root?.append(this.img);
-    this.img.onclick = this.click.bind(this);
+    this.img.addEventListener ("click", this.click.bind(this));
   }
 
   public remove() {
     this.img.remove();
+    this.img.removeEventListener("click", this.click.bind(this));
   }
 
   public render() {

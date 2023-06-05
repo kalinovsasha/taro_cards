@@ -1,4 +1,4 @@
-import { TaroCard } from '../model/cards';
+import { TaroCard } from '../../model/cards';
 import './card.scss';
 
 export default class Card {
